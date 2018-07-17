@@ -1,5 +1,11 @@
+
 # ccgen
-Minimalistic Go package for random credit card numbers generation
+Minimalistic Go package for random Luhn-compliant credit card numbers generation
+
+[![Go Report Card](https://goreportcard.com/badge/github.com/nsuprun/ccgen)](https://goreportcard.com/report/github.com/nsuprun/ccgen)
+
+## Introduction
+The package allows generating random credit card numbers according to the [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm). Card prefix (first N digits of a card number) will correspond to the selected card scheme.
 
 ## Usage
 Intall the package with:
@@ -7,7 +13,7 @@ Intall the package with:
 ```
 go get github.com/nsuprun/ccgen
 ```
-Import
+Import:
 ```go
 import (
 	"github.com/nsuprun/ccgen"
@@ -33,11 +39,11 @@ const (
 
 ```go
 func main() {
-	// To generate card number of random valid length
+	// To generate a card number of random valid length
 	fmt.Printf("American Express: %s\n", ccgen.AmericanExpress.Generate())
 	fmt.Printf("Diners Club: %s\n", ccgen.DinersClub.Generate())
 
-	// To generate card number of selected valid length:
+	// To generate a card number of selected valid length:
 	// Solo 19 digits card
 	fmt.Printf("Solo: %s\n", ccgen.Solo.GenerateOfLength(19))
 }

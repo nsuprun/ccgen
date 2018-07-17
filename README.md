@@ -2,7 +2,12 @@
 Minimalistic Go package for random credit card numbers generation
 
 ## Usage
+Intall the package with:
 
+```
+go get github.com/nsuprun/ccgen
+```
+Import
 ```go
 import (
 	"github.com/nsuprun/ccgen"
@@ -25,18 +30,22 @@ const (
 	Mir
 )
 ```
-To generate card number of random valid length
 
 ```go
-ccgen.AmericanExpress.Generate()
-// 346770125855275
+func main() {
+	// To generate card number of random valid length
+	fmt.Printf("American Express: %s\n", ccgen.AmericanExpress.Generate())
+	fmt.Printf("Diners Club: %s\n", ccgen.DinersClub.Generate())
 
-ccgen.Mastercard.Generate()
-// 2720243672467447
+	// To generate card number of selected valid length:
+	// Solo 19 digits card
+	fmt.Printf("Solo: %s\n", ccgen.Solo.GenerateOfLength(19))
+}
 ```
 
-To generate card number of selected valid length:
-```go
-ccgen.Solo.GenerateOfLength(19)
-// 6767137537983398740
+Output:
+```
+American Express: 346905926744572
+Diners Club: 36690592674457
+Solo: 6334690592674457710
 ```

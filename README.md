@@ -1,6 +1,6 @@
 
 # ccgen
-Minimalistic Go package for random Luhn-compliant credit card numbers generation
+Minimalistic Go package for a random Luhn-compliant credit card numbers generation
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/nsuprun/ccgen)](https://goreportcard.com/report/github.com/nsuprun/ccgen)
 

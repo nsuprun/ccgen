@@ -8,7 +8,7 @@ Minimalistic Go package for random Luhn-compliant credit card numbers generation
 The package allows generating random credit card numbers according to the [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm). Card prefix (first N digits of a card number) will correspond to the selected card scheme.
 
 ## Usage
-Intall the package with:
+Install the package with:
 
 ```
 go get github.com/nsuprun/ccgen
@@ -19,7 +19,7 @@ import (
 	"github.com/nsuprun/ccgen"
 )
 ```
-At the moment, the following card schemes are supported:
+At the moment the following card schemes are supported:
 ```go
 const (
 	AmericanExpress CardType = iota + 1

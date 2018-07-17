@@ -2,7 +2,7 @@
 # ccgen
 Minimalistic Go package for a random Luhn-compliant credit card numbers generation
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/nsuprun/ccgen)](https://goreportcard.com/report/github.com/nsuprun/ccgen)
+[![Go Report Card](https://goreportcard.com/badge/github.com/nsuprun/ccgen)](https://goreportcard.com/report/github.com/nsuprun/ccgen)  [![Build Status](https://travis-ci.org/nsuprun/ccgen.svg?branch=master)](https://travis-ci.org/nsuprun/ccgen)
 
 ## Introduction
 The package allows generating random credit card numbers according to the [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm). Card prefix (first N digits of a card number) will correspond to the selected card scheme.

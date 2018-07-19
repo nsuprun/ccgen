@@ -46,6 +46,9 @@ func main() {
 	// To generate a card number of selected valid length:
 	// Solo 19 digits card
 	fmt.Printf("Solo: %s\n", ccgen.Solo.GenerateOfLength(19))
+
+	// To validate if card number of given type is valid
+	fmt.Printf("Card number valid: %t\n", ccgen.DinersClub.ValidNumber("36690592674457"))
 }
 ```
 
@@ -54,4 +57,5 @@ Output:
 American Express: 346905926744572
 Diners Club: 36690592674457
 Solo: 6334690592674457710
+Card number valid: true
 ```

@@ -49,10 +49,24 @@ func TestGenerateOfLength(t *testing.T) {
 	Suite(t, cnumber, ccgen.Mastercard)
 }
 
+func TestValidNumber(t *testing.T) {
+	cnumber := ccgen.Visa.GenerateOfLength(13)
+
+	// too short card length
+	if ccgen.Visa.ValidNumber(cnumber[:len(cnumber)-1]) {
+		t.Error("Card number is not valid")
+	}
+
+}
+
 func Suite(t *testing.T, cnumber string, card ccgen.CardType) {
 	// check length is valid
 	if !card.ValidLength(len(cnumber)) {
-		t.Error("Not valid card date", len(cnumber), card)
+		t.Error("Not valid card length", len(cnumber), card)
 	}
 
+	// Luhn check
+	if !card.ValidNumber(cnumber) {
+		t.Error("Luhn check failed: ", cnumber)
+	}
 }

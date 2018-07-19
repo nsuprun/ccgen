@@ -52,6 +52,21 @@ func (t CardType) getRandomValidLength() int {
 	return cardLength[t][rand.Intn(len(cardLength[t]))]
 }
 
+// ValidNumber validates card number for a prefix and Luhn algo
+// @todo: add card prefix check
+func (t CardType) ValidNumber(cnumber string) bool {
+	return checkLuhn(cnumber)
+}
+
+// Checks if the card number has valid check digit
+func checkLuhn(cnumber string) bool {
+	if len(cnumber) < 13 || len(cnumber) > 19 {
+		return false
+	}
+	checkDigit := cnumber[len(cnumber)-1:]
+	return checkDigit == generateCheckDigit(cnumber[:len(cnumber)-1])
+}
+
 // generates the rest of the digits after the card prefix
 // leaving the last position for the check digit
 func completeDigits(bin string, l int) string {

@@ -60,7 +60,7 @@ func (t CardType) ValidNumber(cnumber string) bool {
 
 // Checks if the card number has valid check digit
 func checkLuhn(cnumber string) bool {
-	if len(cnumber) < 13 || len(cnumber) > 19 {
+	if len(cnumber) < 12 || len(cnumber) > 19 {
 		return false
 	}
 	checkDigit := cnumber[len(cnumber)-1:]

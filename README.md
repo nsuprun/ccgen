@@ -39,7 +39,10 @@ const (
 
 ```go
 func main() {
-	// To generate a card number of random valid length
+	// To generate a card number of a random card type
+	fmt.Printf("Random card type number: %s\n", ccgen.Generate())
+
+	// To generate a card number of a choosen type and random valid length
 	fmt.Printf("American Express: %s\n", ccgen.AmericanExpress.Generate())
 	fmt.Printf("Diners Club: %s\n", ccgen.DinersClub.Generate())
 
@@ -48,7 +51,7 @@ func main() {
 	fmt.Printf("Solo: %s\n", ccgen.Solo.GenerateOfLength(19))
 
 	// To validate if card number of given type is valid
-	fmt.Printf("Card number valid: %t\n", ccgen.DinersClub.ValidNumber("36690592674457"))
+	fmt.Printf("Card number is valid: %t\n", ccgen.DinersClub.ValidNumber("36690592674457"))
 }
 ```
 
@@ -57,5 +60,6 @@ Output:
 American Express: 346905926744572
 Diners Club: 36690592674457
 Solo: 6334690592674457710
-Card number valid: true
+Card number is valid: true
+Random card number: 6767575111052941
 ```

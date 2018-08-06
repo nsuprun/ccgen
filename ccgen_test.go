@@ -22,6 +22,13 @@ var cardsToTests = []ccgen.CardType{
 }
 
 func TestGenerate(t *testing.T) {
+	cnnumber := ccgen.Generate()
+
+	if len(cnnumber) == 0 {
+		t.Error("Length is incorrect")
+	}
+}
+func TestCardTypeGenerate(t *testing.T) {
 
 	for _, cardType := range cardsToTests {
 		cnumber := cardType.Generate()

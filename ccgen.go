@@ -9,6 +9,24 @@ import (
 // CardType represents card number type to be generated
 type CardType int
 
+// Generate generates card number of a random card type
+func Generate() string {
+	return getRandomCardType().Generate()
+}
+
+// Returns random card type
+// @todo: consider other way to limit highest type
+func getRandomCardType() CardType {
+	rand.Seed(time.Now().Unix())
+	randType := rand.Intn(int(Mir))
+
+	if randType == 0 {
+		randType++
+	}
+
+	return CardType(randType)
+}
+
 // Generate generates random card number of CardType
 func (t CardType) Generate() string {
 	length := t.getRandomValidLength()

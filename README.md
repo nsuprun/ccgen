@@ -61,5 +61,5 @@ Random card number: 6767575111052941
 American Express: 346905926744572
 Diners Club: 36690592674457
 Solo: 6334690592674457710
-Card number is wvalid: true
+Card number is valid: true
 ```
